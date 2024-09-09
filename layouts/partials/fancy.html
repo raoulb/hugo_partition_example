@@ -1,0 +1,7 @@
+{{/* Some fancy slideshow component for eaxmple */}}
+
+{{ range . }}
+  <span style="border:1px solid red; max-width:50px; margin: 20px; padding: 5px;">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </span>
+{{ end }}

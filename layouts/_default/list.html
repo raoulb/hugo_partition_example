@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+
+  <hr>
+
+  {{/*
+  {{ $allPages := $.Site.RegularPages }}
+  {{ $groups := partition 4 $allPages }}
+  {{ range first 2 $groups }}
+    <h3>Some heading</h3>
+    <div>
+      {{ partial "fancy.html" . }}
+    </div>
+  {{ end }}
+  */}}
+
+  {{ range $.Site.RegularPages | partition 3 | first 2 }}
+    <h3>Some heading</h3>
+    <div>
+      {{ partial "fancy.html" . }}
+    </div>
+  {{ end }}
+
+{{ end }}
